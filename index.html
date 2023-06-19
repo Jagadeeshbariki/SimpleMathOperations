@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths.com</title>
+      <link rel="icon" type="image/png" href="jaga.jpg" style="border-radius: 50%;">
+
+</head>
+
+<style>
+
+    body{
+        text-align: center;
+        background-image: url(math.jpg);
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+
+    #cal{
+        display: flex;
+        margin: 0 auto;
+        height: 50%;
+        width: 50%;
+        flex-direction: column;
+        background-color: rgba(68, 180, 85, 0.934);
+        border: 10px red double;
+        color: rgb(242, 243, 249);
+        align-content: space-evenly;
+
+    }
+    h1{
+        color: #07d1f0;
+        background-color: rgba(255, 0, 0, 0.66);
+    }
+    #dropDown{
+        height: 25px;
+        width: auto;
+        color: darkgreen;
+        background-color: rgb(193, 203, 203);
+    }
+    p{
+        text-decoration: double;
+        color: rgb(195, 255, 0);
+    }
+
+</style>
+
+<body>
+    <div id="cal">
+    <h1>Simple Maths Calculater</h1>
+    <label>Select The Maths Operation:</label>
+    <select id="dropDown" onchange="mathF()">
+        <option value=""> Select the option......</option>
+        <option value="Addition"> Addition (+)</option>
+        <option value="Substraction">Substraction(-)</option>
+        <option value="Multiplication">Multiplication(X)</option>
+        <option value="Devision">Devision(/)</option>
+    </select>
+
+    <p id="result"></p>
+    </div>
+    
+    <script>
+            function mathF(){
+                let math=document.getElementById("dropDown").value
+                if(math=="Addition"){
+                    let a=prompt("Enter first valu");
+                    let b=prompt("enter secod value")
+                    a=parseFloat(a);
+                    b=parseFloat(b)
+                    document.getElementById("result").innerHTML="The Addition of two numbers "+a+" and "+b+" = "+(a+b);
+                }
+                else if(math=="Substraction"){
+                    let a=prompt("Enter first valu");
+                    let b=prompt("enter secod value");
+                    document.getElementById("result").innerHTML="The Subsraction of two numbers "+a+" and "+b+" = "+(a-b);
+                }
+
+                else if(math=="Multiplication"){
+                    let a=prompt("Enter first valu");
+                    let b=prompt("enter secod value");
+                    document.getElementById("result").innerHTML="The Multiplication of two numbers "+a+" and "+b+" = "+(a*b);
+                }
+                else{
+                    let a=prompt("Enter first valu");
+                    let b=prompt("enter secod value");
+                    document.getElementById("result").innerHTML="The Devision of two numbers "+a+" and "+b+" = "+(a/b);
+                }
+
+            }
+
+    </script>
+</body>
+</html>
